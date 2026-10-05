@@ -2,7 +2,7 @@ class HprofAnalyzer < Formula
   desc "Fast, low-memory Java HPROF heap-dump analyzer with MCP server and OQL query engine"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "nightly"
+  version "2026.10.05"
 
   on_macos do
     on_arm do
