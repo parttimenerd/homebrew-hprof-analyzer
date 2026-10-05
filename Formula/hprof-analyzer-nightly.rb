@@ -2,7 +2,7 @@ class HprofAnalyzerNightly < Formula
   desc "hprof-analyzer nightly — rolling build from main (MCP server + heap CLI)"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "nightly"
+  version "2026.10.05"
 
   on_macos do
     on_arm do
