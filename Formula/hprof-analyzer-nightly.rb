@@ -2,23 +2,23 @@ class HprofAnalyzerNightly < Formula
   desc "hprof-analyzer nightly — rolling build from main (MCP server + heap CLI)"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "2026.11.01"
+  version "2026.11.02"
 
   on_macos do
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
-      sha256 "870760d17362d4a1bbd207f43e54f6be2314871965568c48403281bd00874341"
+      sha256 "46f936c8d4b7afa45603affef59062eb567603489c24b5f809cb1ee16040a19f"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3bdbe7ebeb479c08c9223c41da97bb0ba2d408f5051ad1067d6bad85dd694a1d"
+      sha256 "4aec9f964173260404a00ca42b1249e560e3d32d2f6b5e06d7e4d8ecb075dd47"
     end
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "225e799358a0455644005d6203430eaf65afb9730abf2f3075920328ecb9ed32"
+      sha256 "49bfa3e0854f492664323288317b0e84ab468b54dbf920270286cd8307255445"
     end
   end
 
