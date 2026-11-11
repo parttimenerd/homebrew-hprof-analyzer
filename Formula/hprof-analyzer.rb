@@ -2,23 +2,23 @@ class HprofAnalyzer < Formula
   desc "Fast, low-memory Java HPROF heap-dump analyzer with MCP server and OQL query engine"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "2026.11.10"
+  version "2026.11.11"
 
   on_macos do
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
-      sha256 "0f6016cbae5638526b658f6a7ccc3e0d485639da3bc2721fe0cd3d5f140a1f58"
+      sha256 "d8e330356eadfb7e6a332080c672738e6b3083d38dc82b05370cd7b4182f9876"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e41996cef3826fbffd9fe8b4df75947cd18da7c90f363c67c3df72eb7c3f3129"
+      sha256 "8b3e14e349d4aed4883a28df282c81e749ec834916d30054115136727c5e4394"
     end
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d870b0a5bc96dc337415736009d004fc5a63f1269742c8d8978a15fb1fbf46f1"
+      sha256 "f0bd3a2b76fe5a871d5c7354910882b5533ea7f6712e070f1ddf49d0b4401e98"
     end
   end
 
