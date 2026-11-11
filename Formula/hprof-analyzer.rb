@@ -7,18 +7,18 @@ class HprofAnalyzer < Formula
   on_macos do
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
-      sha256 "d8e330356eadfb7e6a332080c672738e6b3083d38dc82b05370cd7b4182f9876"
+      sha256 "16ac5e1a9e97fcdcf090924cbc4fd8abac426e63fce657c978f9a6482e175d44"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8b3e14e349d4aed4883a28df282c81e749ec834916d30054115136727c5e4394"
+      sha256 "416452e617ecacdc810badf13a9ff2a1d40251febba2f2d8d2ec77bfd6ca1ae6"
     end
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f0bd3a2b76fe5a871d5c7354910882b5533ea7f6712e070f1ddf49d0b4401e98"
+      sha256 "23872ce31fa118d7a25ec7799161486e7b247525be2fe14f175837d751226516"
     end
   end
 
