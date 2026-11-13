@@ -2,23 +2,25 @@ class HprofAnalyzer < Formula
   desc "Fast, low-memory Java HPROF heap-dump analyzer with MCP server and OQL query engine"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "2026.11.13"
 
   on_macos do
     on_arm do
-      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
-      sha256 "edb4e2ce11315429e8ad1b878f12fdb7b937a28506c133d890ca47a4848bc823"
+      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/v0.3.4/hprof-analyzer-aarch64-apple-darwin.tar.gz"
+      sha256 "c46bccec79dbe2cc0c5b09b42edb748c3dabec2f18c6f2fef7579a0aaebb4393"
+      version "0.3.4"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "bb4b9c763724a65b4b7014149ccd7e8ee9259dac46488e2911895ebaf12d7fc5"
+      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/v0.3.4/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "9f6ed2fb977b15d5c3ae7cd1fbf107c7fde37bf79ca56cd659f1185f1f09ec5d"
+      version "0.3.4"
     end
     on_arm do
-      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f94039b9f2ccfdaffb8c95c9a4bc9f23be71bdd95aa0ccc15e25170c47751e02"
+      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/v0.3.4/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f387da54966008bd2f36c88c869a2676d8b3a4d406c9e11e6f7c85ec9a5adad3"
+      version "0.3.4"
     end
   end
 
@@ -30,6 +32,9 @@ class HprofAnalyzer < Formula
     <<~EOS
       Add the MCP server to Claude Code:
         claude mcp add hprof -- hprof-analyzer mcp
+
+      Or add to Claude Desktop (~/.claude/mcp.json):
+        { "mcpServers": { "hprof": { "command": "hprof-analyzer", "args": ["mcp"] } } }
 
       See https://github.com/parttimenerd/hprof-analyzer#mcp-server--ai-integration
     EOS
