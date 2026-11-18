@@ -8,7 +8,10 @@ cask "hprof-analyzer@nightly" do
   homepage "https://github.com/parttimenerd/hprof-analyzer"
 
   depends_on arch: :arm64
-  conflicts_with formula: "hprof-analyzer"
 
   binary "hprof-analyzer-aarch64-apple-darwin/hprof-analyzer"
+
+  caveats do
+    "Uninstall the stable hprof-analyzer formula first if both are needed on the same box: `brew uninstall hprof-analyzer`"
+  end
 end
