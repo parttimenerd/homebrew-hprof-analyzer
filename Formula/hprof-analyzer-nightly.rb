@@ -1,12 +1,11 @@
-class HprofAnalyzerATNightly < Formula
+class HprofAnalyzerNightly < Formula
   desc "hprof-analyzer nightly — rolling build from main (MCP server + heap CLI)"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
   version "nightly"
 
-  # The nightly tarball is re-uploaded on every push to main, so its bytes
-  # change constantly — a pinned sha256 would be stale within one build.
-  # `sha256 :no_check` is the Homebrew idiom for such rolling artifacts.
+  # Rolling artifact: re-uploaded on every push to main, so a pinned sha256
+  # would be stale within one build. `sha256 :no_check` is the Homebrew idiom.
   on_macos do
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
@@ -33,9 +32,6 @@ class HprofAnalyzerATNightly < Formula
     <<~EOS
       Add the MCP server to Claude Code:
         claude mcp add hprof -- hprof-analyzer mcp
-
-      Or add to Claude Desktop (~/.claude/mcp.json):
-        { "mcpServers": { "hprof": { "command": "hprof-analyzer", "args": ["mcp"] } } }
 
       Update in place with:
         hprof-analyzer update nightly
