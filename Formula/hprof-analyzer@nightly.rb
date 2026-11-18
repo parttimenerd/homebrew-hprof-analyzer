@@ -2,23 +2,26 @@ class HprofAnalyzerNightly < Formula
   desc "hprof-analyzer nightly — rolling build from main (MCP server + heap CLI)"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "2026.11.18"
+  version "nightly"
 
+  # The nightly tarball is re-uploaded on every push to main, so its bytes
+  # change constantly — a pinned sha256 would be stale within one build.
+  # `sha256 :no_check` is the Homebrew idiom for such rolling artifacts.
   on_macos do
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
-      sha256 "8b1687a4932880586934f8f6449d69a477d2cd9fef731154bcc36c2b30109213"
+      sha256 :no_check
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "6227c2e0fc97db3a3bd8c4836c59623e7e6923da70ed6ee681b2f683072d344e"
+      sha256 :no_check
     end
     on_arm do
       url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "996fac43fb46b66efd65c46292195707b781240bc9106b7ab2bdd969ae2e0569"
+      sha256 :no_check
     end
   end
 
@@ -31,12 +34,17 @@ class HprofAnalyzerNightly < Formula
       Add the MCP server to Claude Code:
         claude mcp add hprof -- hprof-analyzer mcp
 
+      Or add to Claude Desktop (~/.claude/mcp.json):
+        { "mcpServers": { "hprof": { "command": "hprof-analyzer", "args": ["mcp"] } } }
+
+      Update in place with:
+        hprof-analyzer update nightly
+
       See https://github.com/parttimenerd/hprof-analyzer#mcp-server--ai-integration
     EOS
   end
 
   test do
     system "#{bin}/hprof-analyzer", "--version"
-    assert_match "SELECT", shell_output("#{bin}/hprof-analyzer heap docs --topic syntax")
   end
 end

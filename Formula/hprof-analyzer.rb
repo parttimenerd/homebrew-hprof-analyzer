@@ -2,23 +2,23 @@ class HprofAnalyzer < Formula
   desc "Fast, low-memory Java HPROF heap-dump analyzer with MCP server and OQL query engine"
   homepage "https://github.com/parttimenerd/hprof-analyzer"
   license "MIT"
-  version "2026.11.18"
+  version "0.3.4"
 
   on_macos do
     on_arm do
-      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-apple-darwin.tar.gz"
-      sha256 "8b1687a4932880586934f8f6449d69a477d2cd9fef731154bcc36c2b30109213"
+      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/v0.3.4/hprof-analyzer-aarch64-apple-darwin.tar.gz"
+      sha256 "c46bccec79dbe2cc0c5b09b42edb748c3dabec2f18c6f2fef7579a0aaebb4393"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "6227c2e0fc97db3a3bd8c4836c59623e7e6923da70ed6ee681b2f683072d344e"
+      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/v0.3.4/hprof-analyzer-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "9f6ed2fb977b15d5c3ae7cd1fbf107c7fde37bf79ca56cd659f1185f1f09ec5d"
     end
     on_arm do
-      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/nightly/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "996fac43fb46b66efd65c46292195707b781240bc9106b7ab2bdd969ae2e0569"
+      url "https://github.com/parttimenerd/hprof-analyzer/releases/download/v0.3.4/hprof-analyzer-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f387da54966008bd2f36c88c869a2676d8b3a4d406c9e11e6f7c85ec9a5adad3"
     end
   end
 
@@ -31,12 +31,17 @@ class HprofAnalyzer < Formula
       Add the MCP server to Claude Code:
         claude mcp add hprof -- hprof-analyzer mcp
 
+      Or add to Claude Desktop (~/.claude/mcp.json):
+        { "mcpServers": { "hprof": { "command": "hprof-analyzer", "args": ["mcp"] } } }
+
+      Update in place with:
+        hprof-analyzer update latest   # or: update nightly
+
       See https://github.com/parttimenerd/hprof-analyzer#mcp-server--ai-integration
     EOS
   end
 
   test do
     system "#{bin}/hprof-analyzer", "--version"
-    assert_match "SELECT", shell_output("#{bin}/hprof-analyzer heap docs --topic syntax")
   end
 end

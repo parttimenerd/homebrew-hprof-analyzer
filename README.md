@@ -15,7 +15,7 @@ After install, Homebrew prints setup instructions for the MCP server.
 ### Nightly build (tracks `main`)
 
 ```sh
-brew install parttimenerd/hprof-analyzer/hprof-analyzer-nightly
+brew install parttimenerd/hprof-analyzer/hprof-analyzer@nightly
 ```
 
 ## Quick usage
