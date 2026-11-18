@@ -12,10 +12,22 @@ brew install hprof-analyzer
 
 After install, Homebrew prints setup instructions for the MCP server.
 
-### Nightly build (tracks `main`)
+### Nightly build (tracks `main`, macOS / Apple Silicon)
 
 ```sh
-brew install parttimenerd/hprof-analyzer/hprof-analyzer@nightly
+brew install --cask parttimenerd/hprof-analyzer/hprof-analyzer@nightly
+```
+
+The nightly channel is a **cask** (not a formula) because `@` in formula filenames is only valid with numeric versions. To upgrade or switch channels:
+
+```sh
+brew upgrade --cask hprof-analyzer@nightly     # update nightly
+brew upgrade hprof-analyzer                    # update stable
+
+# switch stable → nightly
+brew uninstall hprof-analyzer && brew install --cask parttimenerd/hprof-analyzer/hprof-analyzer@nightly
+# switch nightly → stable
+brew uninstall --cask hprof-analyzer@nightly && brew install parttimenerd/hprof-analyzer/hprof-analyzer
 ```
 
 ## Quick usage
